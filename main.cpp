@@ -1,5 +1,3 @@
-
-
 #include "raylib.h"
 #include "raymath.h"
 #include "sprites.h"
@@ -44,16 +42,51 @@ void LoadObstacles()
     ObstacleNpatch.right = 20;
     ObstacleNpatch.left = 20;
 
+    //Primary Screen
     Obstacles.emplace_back(Rectangle{ 200,-100, 200, 50 });
     Obstacles.emplace_back(Rectangle{ 400,-200, 100, 25 });
     Obstacles.emplace_back(Rectangle{ 550,-300, 100, 50 });
 
+    // For Screen above
+    Obstacles.emplace_back(Rectangle{ 200,-500, 200, 50 });
+    Obstacles.emplace_back(Rectangle{ 400,-600, 100, 25 });
+    Obstacles.emplace_back(Rectangle{ 550,-400, 100, 50 });
+    Obstacles.emplace_back(Rectangle{ 80,-625, 100, 25 });
+    Obstacles.emplace_back(Rectangle{ 600,-650, 100, 50 });
+
     Obstacles.emplace_back(Rectangle{ 900,-350, 80, 30 });
     Obstacles.emplace_back(Rectangle{ 600,-50, 200, 50 });
 
+    // For screen on right
+    Obstacles.emplace_back(Rectangle{ -100,-150, 200, 50 });
+    Obstacles.emplace_back(Rectangle{ -300,-300, 150, 40 });
+    Obstacles.emplace_back(Rectangle{ -450,-200, 80, 25 });
+
+    // For screen on right
     Obstacles.emplace_back(Rectangle{ 900,-150, 200, 50 });
     Obstacles.emplace_back(Rectangle{ 1100,-300, 150, 40 });
     Obstacles.emplace_back(Rectangle{ 1300,-200, 80, 25 });
+}
+
+void LoadBackground() {
+    // Sky (use a large rectangle to cover the entire background)
+    DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), SKYBLUE);
+
+    // Draw mountains or hills using triangles
+    DrawTriangle(Vector2{ 200, 450 }, Vector2{ 400, 150 }, Vector2{ 600, 450 }, DARKGREEN);
+    DrawTriangle(Vector2{ 600, 450 }, Vector2{ 800, 200 }, Vector2{ 1000, 450 }, DARKGREEN);
+
+    // Draw some clouds using circles
+    DrawCircle(150, 100, 40, WHITE);
+    DrawCircle(180, 120, 40, WHITE);
+    DrawCircle(130, 120, 40, WHITE);
+
+    DrawCircle(650, 80, 30, WHITE);
+    DrawCircle(680, 100, 30, WHITE);
+    DrawCircle(630, 100, 30, WHITE);
+
+    // Draw the sun
+    DrawCircle(700, 60, 50, YELLOW);
 }
 
 
@@ -74,6 +107,8 @@ int main(void)
 
     float gravity = 500.0f;
 
+
+    LoadBackground();
     LoadObstacles();
 
     // load our sprite sheet
@@ -265,6 +300,9 @@ int main(void)
         BeginDrawing();
         ClearBackground(SKYBLUE);
         BeginMode2D(cam);
+
+
+
         DrawRectangle(cam.target.x - cam.offset.x, 0, GetScreenWidth(), 50, BROWN);
 
         for (Rectangle& rect : Obstacles)
@@ -306,3 +344,5 @@ int main(void)
 
     return 0;
 }
+
+
