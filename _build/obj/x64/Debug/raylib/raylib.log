@@ -1,0 +1,15 @@
+﻿  raudio.c
+  rcore.c
+C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\raylib-master\src\external\jar_xm.h(242,1): warning C4005: 'DEBUG': macro redefinition
+  (compiling source file '../../raylib-master/src/raudio.c')
+  C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\raylib-master\src\external\jar_xm.h(242,1):
+  'DEBUG' previously declared on the command line
+  
+  rglfw.c
+  rmodels.c
+  rshapes.c
+  rtext.c
+  rtextures.c
+  utils.c
+  Generating Code...
+  raylib.vcxproj -> C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\platform_example\_bin\Debug\raylib.lib

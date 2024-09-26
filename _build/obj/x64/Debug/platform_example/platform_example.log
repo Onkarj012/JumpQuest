@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\platform_example\main.cpp(71,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\platform_example\main.cpp(268,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  platform_example.vcxproj -> C:\Users\Onkar Jadhav\Documents\examples-cpp-main\examples-cpp-main\platform_example\_bin\Debug\platform_example.exe
